@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
+import { User } from "@supabase/supabase-js"; // 👈 импортируем тип
 
 export default function HomePage() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null); // 👈 указываем тип явно
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
